@@ -1,0 +1,81 @@
+body {
+    width: 100%;
+    height: 100%;
+}
+html {
+    width: 100%;
+    height: 100%;
+}
+@media(min-width:767px) {
+    .navbar {
+        padding: 20px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+    .top-nav-collapse {
+        padding: 0;
+    }
+}
+
+.welcome-section {
+    height: auto;
+    padding-top: 150px;
+    padding-bottom: 100px;
+    text-align: center;
+    font-size: 17px;
+    background: #fff;
+}
+.method-section {
+    height: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+    font-size: 17px;
+    background: #EFDECD;
+}
+.results-section {
+    height: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+    font-size: 17px;
+    background: #fff;
+}
+.extras-section {
+    height: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+    font-size: 15px;
+    background: #EFDECD;
+}
+.navbar-default .navbar-nav > li > a:hover {
+	color: #333;
+	background-color: #F0F0F0;
+}
+.navbar-default {
+    background-color: #EBFAFF;
+    border-color: #e7e7e7;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #000;
+}
+
+.rowfit {
+  margin-right: -30px;
+  margin-left: -30px;
+}
+
+.middle {
+    max-width: 100%;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    margin: auto auto;
+}
+
+.centered {
+    width: 100%;
+}
+

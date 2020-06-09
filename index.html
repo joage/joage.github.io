@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="https://html5-templates.com/" />
+    <title>Face Morph</title>
+    <meta name="description" content="Simplified Bootstrap template with sticky menu">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/sticky-menu.css" rel="stylesheet">
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    
+    <!-- Welcome   -->
+    <section id="welcome" class="welcome-section">
+        <div class="container">
+            <div class="row">
+                <div class="centered">
+                    <h1>Face Morphing</h1>
+                    <br>
+                    <img src="lindgeolind.gif" width=25%>
+	
+                </div>
+                <div class="middle">
+                    <h2>Overview</h3>
+                    <p>A face morph is a seamless transition from one face to another. The first step in creating a face morph is to define pairs of facial correspondences, or landmark points on each face. From these correspondences, I produced a Delaunay triangulation of each image using scipy.spatial.Delaunay.</p><br> 
+
+                    <img src="george.jpg" width=20%>
+                    <img src="george_tri.jpg" width=20%>
+                    <img src="lindsay.jpg" width=20%>
+                    <img src="lindsay_tri.jpg" width=20%>
+
+                    <h2><br> The Midway Face</h3>
+                    <p> Each of these triangles corresponds to another triangle in the other face. Taking the vertices of a triangle, I defined an affine transformation of its points to the points in the other image. To compute the midway face (right), I averaged the two faces' geometries and warped each face to this shape. Overlaying the two warps created the midway image.</p><br> 
+
+                    <div class="container">
+                        <div class="col-xs-4">
+                            <img src="george_lind_shape.jpg" width=90%>
+                            <p>George warped</p>
+                        </div>
+                        <div class="col-xs-4">
+                            <img src="lind_george_shape.jpg" width=90%>
+                            <p>Lindsay warped</p>
+                        </div>
+                        <div class="col-xs-4">
+                            <img src="midway_lindsay_george.jpg" width=90%>
+                            <p>Georsay</p>
+                        </div>
+                    </div>
+
+                    <h2><br>Morph Sequence</h3>
+                    <p>Instead of averaging the two images in shape and color, I assigned each image a weight and produced 45 images, starting with George at 100% and Lindsay at 0%, and gradually increasing George's weight/decreasing Lindsay's weight. Stitching these images together, then reversing the sequence achieves the seamless morph effect.</p><br> 
+                    <img src="lindgeolind.gif" width=40%>
+
+    
+                    <h2><br><br>Mean face of a population</h3>
+                    <p><br>Using images from the FEI Face Database, I created the mean face of a population with 200 faces. This was done by averaging the facial geometries via triangulation, as well as averaging the color (in this case, black and white intensity). The resulting average face is below.<br>
+                    </p>
+
+                    <img src="avg_brazilian.jpg" width=30%>
+
+
+                    <p><br>Here are some example faces from the database, each morphed into the average face shape.<br></p>
+
+                    <div class="container">
+                        <div class="col-xs-3">
+                            <img src="man.jpg" width=100%>
+                            <p>Original</p>
+                            <img src="man_morphed.jpg" width=100%>
+                            <p>Morphed</p>
+                        </div>
+                        <div class="col-xs-3">
+                            <img src="man2.jpg" width=100%>
+                            <p>Original</p>
+                            <img src="man2_morphed.jpg" width=100%>
+                            <p>Morphed</p>
+                        </div>
+                        <div class="col-xs-3">
+                            <img src="woman.jpg" width=100%>
+                            <p>Original</p>
+                            <img src="woman_morphed.jpg" width=100%>
+                            <p>Morphed</p>
+                        </div>
+                        <div class="col-xs-3">
+                            <img src="woman2.jpg" width=100%>
+                            <p>Original</p>
+                            <img src="woman2_morphed.jpg" width=100%>
+                            <p>Morphed</p>
+                        </div>
+                    </div>
+
+
+                    <p><br>I morphed my own face into the average face (shape only). I also morphed the average face into mine. <br></p>
+
+                    <div class="container">
+                        <div class="col-xs-3"></div>
+                        <div class="col-xs-3">
+                            <img src="small_george.jpg" width=100%>
+                            <p>George</p>
+                            <img src="george_avg.jpg" width=100%>
+                            <p>George morphed to average</p>
+                        </div>
+                        <div class="col-xs-3">
+                            <img src="avg_brazilian.jpg" width=100%>
+                            <p>Average Face</p>
+                            <img src="avg_george.jpg" width=100%>
+                            <p>Average Face morphed to George</p>
+                        </div>
+                        <div class="col-xs-3"></div>
+                    </div>
+
+                    <h2><br>Caricature</h3>
+                    <p><br>I made a caricature (right) of my face via extrapolation. I weighted my own face shape by 1.5 and the average face shape -0.5. I then warped my face to this face shape. This enhanced my own unique features, such as narrower face width, larger forehead, and smaller mouth. <br></p>
+                    <img src="small_george.jpg" width=30%>
+                    <img src="caricature_george.jpg" width=30%>
+
+                    <h2><br>Bells and Whistles</h3>
+                    <p><br>We made a <a href="https://youtu.be/sTT0-nN3vtc">face morph video</a> with some of the students in the class! In the video, I morphed from Lindsay to myself, and I also took headshots for many of the students in the chain.<br></p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Extras Section -->
+    <section id="extras" class="extras-section">
+        <div class="container">
+            <div class="row">
+                <div class="middle">
+                    <h3>About</h3>
+                    <p>Course project for CS 194-26 Image Manipulation and Computational Photography. </p>
+                    <p>By George Wang. March 2020.</p>
+                    <p>Website template: <a href="https://html5-templates.com/" target="_blank" rel="nofollow">HTML5 Templates</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+	
+</body>
+
+</html>
