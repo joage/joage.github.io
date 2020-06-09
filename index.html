@@ -24,15 +24,29 @@
                 </div>
                 <div class="middle">
                     <h2>Overview</h3>
-                    <p>A face morph is a seamless transition from one face to another. The first step in creating a face morph is to define pairs of facial correspondences, or landmark points on each face. From these correspondences, I produced a Delaunay triangulation of each image using scipy.spatial.Delaunay.</p><br> 
+                    <p>A face morph is a seamless transition from one face to another. Two things to consider are face shape and face color. Both must be blended to achieve a smooth looking morph.
 
-                    <img src="george.jpg" width=20%>
-                    <img src="george_tri.jpg" width=20%>
-                    <img src="lindsay.jpg" width=20%>
-                    <img src="lindsay_tri.jpg" width=20%>
+                    The first step in creating a face morph is to define pairs of facial correspondences, or landmark points on each face. From these correspondences, I produced a Delaunay triangulation of each image using scipy.spatial.Delaunay.</p><br> 
+
+                    <div class="container">
+                        <div class="col-xs-3">
+                            <img src="george.jpg" width=95%>
+                            <p>George</p>
+                        </div>
+                        <div class="col-xs-3">
+                            <img src="george_tri.jpg" width=95%>
+                        </div>
+                        <div class="col-xs-3">
+                            <img src="lindsay.jpg" width=95%>
+                            <p>Lindsay</p>
+                        </div>
+                        <div class="col-xs-3">
+                            <img src="lindsay_tri.jpg" width=95%>
+                        </div>
+                    </div>
 
                     <h2><br> The Midway Face</h3>
-                    <p> Each of these triangles corresponds to another triangle in the other face. Taking the vertices of a triangle, I defined an affine transformation of its points to the points in the other image. To compute the midway face (right), I averaged the two faces' geometries and warped each face to this shape. Overlaying the two warps created the midway image.</p><br> 
+                    <p> Each of these triangles corresponds to another triangle in the other face. Taking the vertices of a triangle, I defined an affine transformation of its points to the points in the other image. Then I averaged the two faces' geometries and warped each face to this shape. To get the median face color, I overlayed the two warps and averaged their pixel intensities. This resulted in the midway face, Georsay.</p><br> 
 
                     <div class="container">
                         <div class="col-xs-4">
@@ -115,23 +129,11 @@
                     <img src="small_george.jpg" width=30%>
                     <img src="caricature_george.jpg" width=30%>
 
-                    <h2><br>Bells and Whistles</h3>
-                    <p><br>We made a <a href="https://youtu.be/sTT0-nN3vtc">face morph video</a> with some of the students in the class! In the video, I morphed from Lindsay to myself, and I also took headshots for many of the students in the chain.<br></p>
+                    <h2><br>Extras</h3>
+                    <p><br>Here is a <a href="https://youtu.be/sTT0-nN3vtc">face morph video</a> of my classmates! In the video, Lindsay morphed into me, and I also took headshots for many of the students in the chain.<br></p>
 
-                </div>
-            </div>
-        </div>
-    </section>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/sTT0-nN3vtc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-    <!-- Extras Section -->
-    <section id="extras" class="extras-section">
-        <div class="container">
-            <div class="row">
-                <div class="middle">
-                    <h3>About</h3>
-                    <p>Course project for CS 194-26 Image Manipulation and Computational Photography. </p>
-                    <p>By George Wang. March 2020.</p>
-                    <p>Website template: <a href="https://html5-templates.com/" target="_blank" rel="nofollow">HTML5 Templates</a></p>
                 </div>
             </div>
         </div>
